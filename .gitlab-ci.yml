@@ -5,7 +5,7 @@ before_script:
 
 # DD GRID CI
 build:
-  image: mcr.microsoft.com/playwright:v1.24.0-focal
+  image: mcr.microsoft.com/playwright:v1.23.0-focal
 
   cache:
     paths:
@@ -17,7 +17,7 @@ build:
     - yarn run build
 
 test:
-  image: mcr.microsoft.com/playwright:v1.24.0-focal
+  image: mcr.microsoft.com/playwright:v1.23.0-focal
 
   cache:
     paths:
