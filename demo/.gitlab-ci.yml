@@ -1,0 +1,32 @@
+# DD GRID CI
+build_dd_grid:
+  image: mcr.microsoft.com/playwright:v1.23.0-focal
+
+  cache:
+    paths:
+      - .yarn
+      - $CI_PROJECT_DIR/modules/dd-grid/node_modules/
+
+  script:
+    - cd $CI_PROJECT_DIR/modules/dd-grid && yarn install
+    - cd $CI_PROJECT_DIR/modules/dd-grid && yarn run build
+
+test_dd_grid:
+  image: mcr.microsoft.com/playwright:v1.23.0-focal
+
+  cache:
+    paths:
+      - .yarn
+      - $CI_PROJECT_DIR/modules/dd-grid/node_modules/
+
+  coverage: '/Code coverage: \d+/'
+
+  script:
+    - cd $CI_PROJECT_DIR/modules/dd-grid && yarn install
+    - cd $CI_PROJECT_DIR/modules/dd-grid && yarn run test
+
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: $CI_PROJECT_DIR/modules/dd-grid/coverage/cobertura-coverage.xml

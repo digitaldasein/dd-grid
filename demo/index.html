@@ -1,0 +1,177 @@
+<!--
+SPDX-FileCopyrightText: 2022 Digital Dasein <https://digital-dasein.gitlab.io/>
+SPDX-FileCopyrightText: 2022 Gerben Peeters <gerben@digitaldasein.org>
+SPDX-FileCopyrightText: 2022 Senne Van Baelen <senne@digitaldasein.org>
+
+SPDX-License-Identifier: MIT
+-->
+
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit';
+    import '../dist/src/dd-grid.js';
+
+    render(
+      html`
+      <h1>dd-grid demo</h1>
+      <h2>This example does not include any presentation framework, nor top-level elements</h2>
+
+      <h4>Example 1, with
+        <ul>
+          <li><code>slotStyle="border: 1px solid black;"</code> (same as <code>cellStyle</code>)</li>
+        </ul>
+      </h4>
+      <dd-grid  slotStyle="border: 1px solid black;"
+                dim="70 30; 50 50; 50 50; 30 40 30;">
+        <div slot="1">
+          I should be 70 percent wide whereas my neighbour should only be 30.
+        </div>
+        <div slot="2">
+          Am I only 30? There is nothing wrong with being 30 :'-(.
+        </div>
+        <div slot="3">
+          We should be 50-50, not unlike Belgian taxes
+        </div>
+        <div slot="4">
+          The winner takes it all.
+        </div>
+        <div slot="5">
+          <p>We should be 50-50 too, but now with <code>paragraph tag</code></p>
+        </div>
+        <div slot="6">
+          <p>Some spacing is included.</p>
+        </div>
+        <div slot="7">
+          We are 30 40 30. Let us fill this a bit so you can see this for yourselves.
+        </div>
+        <div slot="8">
+          We are 30 40 30. Let us fill this a bit so you can see this for yourselves.
+        </div>
+        <div slot="9">
+          We are 30 40 30. Let us fill this a bit so you can see this for yourselves.
+        </div>
+      </dd-grid>
+
+      <br><br>
+
+      <h4>Example 2, with
+         <ul>
+           <li><code>rowStyle="border:1px solid black;background-color:lightblue;"</code> </li>
+           <li><code>slotStyle="padding:10px;"</code></h4> </li>
+         </ul>
+      </h4>
+      <dd-grid  rowStyle="border:1px solid black;background-color:lightblue;"
+                slotStyle="padding:10px;"
+                dim="70 30; 50 50; 50 50; 30 40 30;">
+        <div slot="1">
+          I should be 70 percent wide whereas my neighbour should only be 30.
+        </div>
+        <div slot="2">
+          Am I only 30? There is nothing wrong with being 30 :'-(.
+        </div>
+        <div slot="3">
+          We should be 50-50, not unlike Belgian taxes
+        </div>
+        <div slot="4">
+          The winner takes it all.
+        </div>
+        <div slot="5">
+          <p>We should be 50-50 too, but now with <code>paragraph tag</code></p>
+        </div>
+        <div slot="6">
+          <p>Some spacing is included.</p>
+        </div>
+        <div slot="7">
+          We are 30 40 30. Let us fill this a bit so you can see this for yourselves.
+        </div>
+        <div slot="8">
+          We are 30 40 30. Let us fill this a bit so you can see this for yourselves.
+        </div>
+        <div slot="9">
+          We are 30 40 30. Let us fill this a bit so you can see this for yourselves.
+        </div>
+      </dd-grid>
+
+      <br><br>
+
+      <h4>Example 3, with
+        <ul>
+          <li><code>slotStyle="border: 1px solid black;"</code> (same as <code>cellStyle</code>)</li>
+          <li>Unfilled slots (should produce a template fill: replace me)</li>
+        </ul>
+     </h4>
+     <dd-grid  slotStyle="border: 1px solid black;"
+                dim="70 30; 50 50; 50 50; 30 40 30;">
+        <div slot="1">
+          I should be 70 percent wide whereas my neighbour should only be 30.
+        </div>
+        <div slot="2">
+          Am I only 30? There is nothing wrong with being 30 :'-(.
+        </div>
+        <div slot="3">
+          We should be 50-50, not unlike Belgian taxes
+        </div>
+        <div slot="4">
+          The winner takes it all.
+        </div>
+     </dd-grid>
+
+     <br><br>
+
+     <h4>Example 4, with
+        <ul>
+          <li><code>slotStyle="border: 1px solid black;"</code> (same as <code>cellStyle</code>)</li>
+          <li>custom styling of <code>slot 2 (div)</code></li>
+          <li>custom styling of <code>slot 4 (div)</code></li>
+        </ul>
+      </h4>
+      <dd-grid  slotStyle="border: 1px solid black;"
+                dim="70 30; 50 50;">
+        <div slot="1">
+          I should be 70 percent wide whereas my neighbour should only be 30.
+        </div>
+        <div slot="2" style="background-color:blue;">
+          Am I only 30? There is nothing wrong with being 30 :'-(.
+        </div>
+        <div slot="3">
+          We should be 50-50, not unlike Belgian taxes
+        </div>
+        <div slot="4" style="padding:20px;">
+          The winner takes it all.
+        </div>
+      </dd-grid>
+
+      <h4>Example 5, without <code>dim</code> attribute
+        <ul>
+        </ul>
+      </h4>
+      <dd-grid  slotStyle="border: 1px solid black;">
+        <div slot="1">
+          I should be 70 percent wide whereas my neighbour should only be 30.
+        </div>
+        <div slot="2" style="background-color:blue;">
+          Am I only 30? There is nothing wrong with being 30 :'-(.
+        </div>
+      </dd-grid>
+
+      <br><br>
+
+      `,
+
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>
