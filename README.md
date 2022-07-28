@@ -10,6 +10,9 @@ SPDX-License-Identifier: MIT
 
 ![pipeline](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/badges/main/pipeline.svg?job=build&key_text=build)
 ![coverage](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/badges/main/coverage.svg?job=test)
+[![REUSE 
+status](https://api.reuse.software/badge/gitlab.com/digital-dasein/software/html-presentations/dd-grid)](https://api.reuse.software/info/gitlab.com/digital-dasein/software/html-presentations/dd-grid)
+
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
