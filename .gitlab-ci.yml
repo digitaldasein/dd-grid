@@ -29,9 +29,16 @@ test:
   script:
     - yarn install
     - yarn run test
+    - mv coverage/ public/
 
   artifacts:
     reports:
       coverage_report:
         coverage_format: cobertura
         path: coverage/cobertura-coverage.xml
+
+pages:
+  stage: deploy
+  artifacts:
+    paths:
+      - public
