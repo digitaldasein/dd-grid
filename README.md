@@ -8,8 +8,8 @@ SPDX-License-Identifier: MIT
 
 # \<dd-grid>
 
-![pipeline](https://gitlab.com/digital-dasein/software/html-presenations/dd-grid/badges/main/pipeline.svg?job=build&key_text=build)
-![coverage](https://gitlab.com/digital-dasein/software/html-presenations/dd-grid/badges/main/coverage.svg?job=test)
+![pipeline](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/badges/main/pipeline.svg?job=build&key_text=build)
+![coverage](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/badges/main/coverage.svg?job=test)
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
