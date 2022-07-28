@@ -37,6 +37,7 @@ test:
         path: coverage/cobertura-coverage.xml
 
 pages:
+  image: mcr.microsoft.com/playwright:v1.23.0-focal
   cache:
     paths:
       - .yarn
