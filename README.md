@@ -9,7 +9,7 @@ SPDX-License-Identifier: MIT
 # \<dd-grid>
 
 [![pipeline](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/badges/main/pipeline.svg?job=build&key_text=build)](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/-/pipelines)
-[![coverage](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/badges/main/coverage.svg?job=test)](https://digital-dasein.gitlab.io/software/html-presentations/dd-grid/coverage/lcov-report/)
+[![coverage](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/badges/main/coverage.svg?job=test)](https://digital-dasein.gitlab.io/software/html-presentations/dd-grid/lcov-report/)
 [![REUSE 
 status](https://api.reuse.software/badge/gitlab.com/digital-dasein/software/html-presentations/dd-grid)](https://api.reuse.software/info/gitlab.com/digital-dasein/software/html-presentations/dd-grid)
 
