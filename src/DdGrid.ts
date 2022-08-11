@@ -15,7 +15,63 @@ const DEFAULT_ATTRIBUTES = {
   noFillers: false,
 };
 
+/**
+ * Main class for HTML web component **`dd-grid`**
+ *
+ * For **styling** this component, check out {@link DdGrid.styles |
+ * the styles section}.
+ *
+ * <u>**Important note**</u>: all lit-component properties (interpreted here as
+ * `other properties`) that are documented here have a **corresponding
+ * HTML attribute**. The _non-attribute_ properties are consired private,
+ * and are ingored in the documentation.
+ *
+ * @example
+ * A simple 2x2 grid, with some specifc cell styling (border)
+ *
+ * ```html
+ * <html>
+ *   [...]
+ *   <dd-grid slotStyle="border: 1px solid black;"
+ *            dim="70 30; 50 50;">
+ *      <div slot="1">
+ *        I should be 70 percent wide whereas my neighbour should only be 30.
+ *      </div>
+ *      <div slot="2" style="background-color:blue;">
+ *        Am I only 30? There is nothing wrong with being 30 :'-(.
+ *      </div>
+ *      <div slot="3">
+ *        We should be 50-50, not unlike Belgian taxes
+ *      </div>
+ *      <div slot="4">
+ *        Slot 4 also here.
+ *      </div>
+ *   </dd-grid>
+ *   [...]
+ * </html>
+ * ```
+ *
+ * Whenever you do _not_ include the appropriate number of slots based on your
+ * defined dimensions, a warning will be issued (in the form of a sample
+ * <b>filler</b>, with an example HTML implementation).
+ *
+ */
+
 export class DdGrid extends LitElement {
+  /**
+   * To style the `dd-grid` component, use the following **CSS host
+   * variables** (including their default values):
+   *
+   * |  <div style="width:200px">CSS variable</div>   | <div style="width:200px">Default</div>   | Description |
+   * |:-----------------------------------------------|:-----------------------------------------|:------------|
+   * |**`--dd-gridspace-row`**        |`10px`    | space between grid rows             |
+   * |**`--dd-gridspace-col`**        |`10px`    | space between grid columns          |
+   *
+   * The variables can be set anywhere in your HTML context (e.g. in `:root`,
+   * up until the `dd-slide-collection` component itself).
+   *
+   */
+
   static styles = css`
     :host {
       --gridspace-row: var(--dd-gridspace-row, 10px);
@@ -26,21 +82,63 @@ export class DdGrid extends LitElement {
     }
   `;
 
+  /**
+   * String with grid dimensions
+   * - rows are separated with a `;` (semiolon)
+   * - values correspond to CSS widths
+   *
+   * (see also example above)
+   *
+   * **Corresponding attribute:** `dim`
+   *
+   * **Default value:** `""` (empty string)
+   */
   @property({ type: String, attribute: 'dim' })
   dim = DEFAULT_ATTRIBUTES.dim;
 
+  /**
+   * CSS Style for each slot in the grid
+   *
+   * **Corresponding attribute:** `slot-style`
+   *
+   * **Default value:** `""` (empty string)
+   */
   @property({ type: String, attribute: 'slot-style' })
   slotStyle = DEFAULT_ATTRIBUTES.slotStyle;
 
+  /**
+   * Alias for {@link DdGrid.slotStyle }
+   *
+   * **Corresponding attribute:** `cell-style`
+   *
+   * **Default value:** `""` (empty string)
+   */
   @property({ type: String, attribute: 'cell-style' })
   cellStyle = DEFAULT_ATTRIBUTES.slotStyle;
 
+  /**
+   * CSS Style for each row
+   *
+   * **Corresponding attribute:** `row-style`
+   *
+   * **Default value:** `""` (empty string)
+   */
   @property({ type: String, attribute: 'row-style' })
   rowStyle = DEFAULT_ATTRIBUTES.rowStyle;
 
+  /**
+   * Boolean: whether or not include fillers
+   * If `true`, no auto-fillers will be rendered when slots are not filled
+   * according to grid dimensions.
+   *
+   * **Corresponding attribute:** `no-fillers`
+   *
+   * **Default value:** `false`
+   * */
   @property({ type: Boolean, attribute: 'no-fillers', reflect: true })
   noFillers = DEFAULT_ATTRIBUTES.noFillers;
 
+  /** @ignore */
   @property({ type: Number })
   slotCounter = 0;
 
