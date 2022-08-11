@@ -127,9 +127,9 @@ export class DdGrid extends LitElement {
   rowStyle = DEFAULT_ATTRIBUTES.rowStyle;
 
   /**
-   * Boolean: whether or not include fillers
+   * Boolean: whether or not to include fillers
    * If `true`, no auto-fillers will be rendered when slots are not filled
-   * according to grid dimensions.
+   * in correspondence to grid dimensions.
    *
    * **Corresponding attribute:** `no-fillers`
    *
