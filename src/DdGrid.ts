@@ -12,6 +12,7 @@ const DEFAULT_ATTRIBUTES = {
   dim: '',
   slotStyle: '',
   rowStyle: '',
+  hostStyle: '',
   noFillers: false,
 };
 
@@ -127,6 +128,20 @@ export class DdGrid extends LitElement {
   rowStyle = DEFAULT_ATTRIBUTES.rowStyle;
 
   /**
+   * CSS Style for the host element (`dd-grid`). This is necessary to propagate
+   * inline styles from the host to all the slotted grid elements
+   *
+   * For styling the slots of the `dd-grid` element from an external CSS sheet,
+   * use the `.dd-grid` class.
+   *
+   * **Corresponding attribute:** `style`
+   *
+   * **Default value:** `""` (empty string)
+   */
+  @property({ type: String, attribute: 'style' })
+  hostStyle = DEFAULT_ATTRIBUTES.hostStyle;
+
+  /**
    * Boolean: whether or not to include fillers
    * If `true`, no auto-fillers will be rendered when slots are not filled
    * in correspondence to grid dimensions.
@@ -144,7 +159,6 @@ export class DdGrid extends LitElement {
 
   /* Make grid from dimensions */
   makeGridDim() {
-    let gridClasses = '';
     let gridContents = '';
 
     // find each grid row
@@ -198,37 +212,29 @@ export class DdGrid extends LitElement {
 
         // join together again (grid template)
         const rowColumns = rowCells.join(' ');
-        const gridClass = `
-          .grid-${i + 1}{
-            display: grid;
+
+        const gridStyle = `display: grid;
             grid-template-columns: ${rowColumns};
-            grid-gap: var(--gridspace-col);
-          }
-          `;
-        // add the new grid class to the styles element
-        gridClasses += gridClass;
+            grid-gap: var(--gridspace-col);`;
 
         // adding the content fillers
         gridContents += `
-        <div class="gridrow grid-${i + 1}" style="${this.rowStyle}">
+        <div class="gridrow grid-${i + 1}" style="${gridStyle} ${
+          this.rowStyle
+        }">
           ${rowCellContent}
         </div>
         `;
       }
     }
 
-    const resultStyle = `
-      <style>
-        ${gridClasses}
-      </style>
-    `;
-
     const resultHtml = `
-        ${gridContents}
+        <div class="dd-grid" style="${this.hostStyle}">
+          ${gridContents}
+        </div>
     `;
 
     return `
-      ${resultStyle}
       ${resultHtml}
     `;
   }
