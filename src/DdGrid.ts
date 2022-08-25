@@ -159,6 +159,9 @@ export class DdGrid extends LitElement {
 
   /* Make grid from dimensions */
   makeGridDim() {
+    // re-initialise in case of multiple renders
+    this.slotCounter = 0;
+
     let gridContents = '';
 
     // find each grid row
