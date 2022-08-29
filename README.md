@@ -13,8 +13,8 @@ SPDX-License-Identifier: MIT
 [![REUSE 
 status](https://api.reuse.software/badge/github.com/digitaldasein/dd-grid)](https://api.reuse.software/info/github.com/digitaldasein/dd-grid)
 
-
-This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) 
+recommendation.
 
 ## Installation
 
