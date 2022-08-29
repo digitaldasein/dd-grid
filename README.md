@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2022 Digital Dasein <https://digital-dasein.gitlab.io/>
+SPDX-FileCopyrightText: 2022 Digital Dasein <https://digitaldasein.org/>
 SPDX-FileCopyrightText: 2022 Gerben Peeters <gerben@digitaldasein.org>
 SPDX-FileCopyrightText: 2022 Senne Van Baelen <senne@digitaldasein.org>
 
@@ -8,10 +8,10 @@ SPDX-License-Identifier: MIT
 
 # \<dd-grid>
 
-[![pipeline](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/badges/main/pipeline.svg?job=build&key_text=build)](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/-/pipelines)
-[![coverage](https://gitlab.com/digital-dasein/software/html-presentations/dd-grid/badges/main/coverage.svg?job=test)](https://digital-dasein.gitlab.io/software/html-presentations/dd-grid/lcov-report/)
+[![pipeline](https://github.com/digitaldasein/dd-grid/actions/workflows/build.yml/badge.svg)](https://github.com/digitaldasein/dd-grid/actions/workflows/build.yml)
+[![tests](https://github.com/digitaldasein/dd-grid/actions/workflows/test.yml/badge.svg)](https://digitaldasein.github.io/dd-grid/coverage/lcov-report)
 [![REUSE 
-status](https://api.reuse.software/badge/gitlab.com/digital-dasein/software/html-presentations/dd-grid)](https://api.reuse.software/info/gitlab.com/digital-dasein/software/html-presentations/dd-grid)
+status](https://api.reuse.software/badge/github.com/digitaldasein/dd-grid)](https://api.reuse.software/info/github.com/digitaldasein/dd-grid)
 
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
@@ -41,13 +41,12 @@ As a module:
 
 For a production-ready build, either integrated into a library or standalone, 
 check out the
-[libcompono](https://gitlab.com/digital-dasein/software/html-presentations/libcompono) 
-library.
+[libcompono](https://github.com/digitaldasein/libcompono) library.
 
 ## Docs
 
 &rarr; [go to 
-docs](https://digital-dasein.gitlab.io/software/html-presentations/dd-grid/docs/classes/DdGrid.html)
+docs](https://digitaldasein.github.io/dd-grid/docs/classes/DdGrid.html)
 
 ## Local Demo with `web-dev-server`
 
@@ -86,7 +85,7 @@ To run the tests in interactive watch mode run:
 yarn test:watch
 ```
 Test results are available 
-[here](https://digital-dasein.gitlab.io/software/html-presentations/dd-grid/lcov-report/).
+[here](https://digitaldasein.github.io/dd-grid/coverage/lcov-report).
 
 
 ## Tooling configs
